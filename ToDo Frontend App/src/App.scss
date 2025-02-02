@@ -1,0 +1,205 @@
+:root {
+    // --body-background: #FFF0DC;
+    --body-background: #FAF7F0;
+    --body-background-secondary: #F0BB78;
+    --other-body-background: #131010;
+    --body-font: #131010;
+    --body-border: #131010;
+}
+
+$mainBg: var(--body-background);
+$secondBg: var(--body-background-secondary);
+$otherBg: var(--other-body-background);
+$fontColor: var(--body-font);
+$borderColor: var(--body-border);
+$navbarHeight: 50px;
+$logoWidth: 50px;
+$logoHeight: calc($navbarHeight - 5px);
+$navLinkDivWidth: 200px;
+$introButtonWidth: 100px;
+$introButtonHeight: calc($introButtonWidth * 0.4);
+$loginButtonContainerWidth: calc($introButtonWidth * 2.1);
+$transition: all 0.2s ease-in-out;
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $mainBg;
+    color: $fontColor;
+}
+
+
+.nunito-font {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+@mixin introButtons() {
+    width: $introButtonWidth;
+    height: $introButtonHeight;
+    border: .5px solid $borderColor;
+    border-radius: 5px;
+    padding: 5px;
+    color: $fontColor;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+#navbar {
+    position: relative;
+    width: 100%;
+    height: $navbarHeight;
+
+    #nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: calc($navbarHeight * 0.1) 10px;
+
+        #logo {
+            img {
+                width: $logoWidth;
+                height: $logoHeight;
+                align-self: center;
+            }
+        }
+
+        #links {
+            ul {
+                position: relative;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                width: $navLinkDivWidth;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                li {
+                    position: relative;
+
+                    a {
+                        position: relative;
+                    }
+
+                    a:link,
+                    a:visited,
+                    a:active,
+                    a:hover {
+                        color: $fontColor;
+                        text-decoration: none;
+                    }
+
+                    a:hover {
+                        transition: $transition;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        #profile {
+            button {
+                border: none;
+                outline: none;
+                background: none;
+                width: $logoWidth;
+                height: $logoHeight;
+                border-radius: 100%;
+
+                img {
+                    width: calc($logoWidth * 0.70);
+                    height: auto;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+#app {
+    #introdiv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        #introTextContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            #heading {
+                width: 100%;
+
+                h1 {
+                    font-size: 50px;
+                    white-space: normal;
+
+                    &::before {
+                        content: "Keep It Together,";
+                    }
+
+                    &::after {
+                        content: "One Task at a Time.";
+                        display: block;
+                    }
+                }
+            }
+
+            #intro {
+                width: 70%;
+                font-size: 18px;
+            }
+
+            #loginbuttoncontainer {
+                position: relative;
+                margin-top: 5%;
+
+                div {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    width: $loginButtonContainerWidth;
+
+                    button {
+                        @include introButtons();
+                        transition: $transition;
+                    }
+
+                    #login {
+                        border-color: transparent;
+                    }
+
+                    #login:hover {
+                        border-color: $borderColor;
+                    }
+
+                    #signup {
+                        background-color: $otherBg;
+                        color: $mainBg;
+                    }
+                }
+            }
+        }
+    }
+}
