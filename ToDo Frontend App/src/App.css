@@ -2,7 +2,7 @@
   --body-background: #FAF7F0;
   --body-background-secondary: #F0BB78;
   --other-body-background: #131010;
-  --body-font: #131010;
+  --body-font: #4A4947;
   --body-border: #131010;
 }
 
@@ -89,50 +89,50 @@ body {
   cursor: pointer;
 }
 
-#app #introdiv {
+#app #appComponents {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
-#app #introdiv #introTextContainer {
+#app #appComponents #introTextContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#app #introdiv #introTextContainer #heading {
+#app #appComponents #introTextContainer #heading {
   width: 100%;
 }
-#app #introdiv #introTextContainer #heading h1 {
+#app #appComponents #introTextContainer #heading h1 {
   font-size: 50px;
   white-space: normal;
 }
-#app #introdiv #introTextContainer #heading h1::before {
+#app #appComponents #introTextContainer #heading h1::before {
   content: "Keep It Together,";
 }
-#app #introdiv #introTextContainer #heading h1::after {
+#app #appComponents #introTextContainer #heading h1::after {
   content: "One Task at a Time.";
   display: block;
 }
-#app #introdiv #introTextContainer #intro {
+#app #appComponents #introTextContainer #intro {
   width: 70%;
   font-size: 18px;
 }
-#app #introdiv #introTextContainer #loginbuttoncontainer {
+#app #appComponents #introTextContainer #loginbuttoncontainer {
   position: relative;
   margin-top: 5%;
 }
-#app #introdiv #introTextContainer #loginbuttoncontainer div {
+#app #appComponents #introTextContainer #loginbuttoncontainer div {
   position: relative;
   display: flex;
   justify-content: space-between;
   width: 210px;
 }
-#app #introdiv #introTextContainer #loginbuttoncontainer div button {
+#app #appComponents #introTextContainer #loginbuttoncontainer div button {
   width: 100px;
   height: 40px;
   border: 0.5px solid var(--body-border);
@@ -142,14 +142,110 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-size: 18px;
 }
-#app #introdiv #introTextContainer #loginbuttoncontainer div #login {
+#app #appComponents #introTextContainer #loginbuttoncontainer div #login {
   border-color: transparent;
 }
-#app #introdiv #introTextContainer #loginbuttoncontainer div #login:hover {
+#app #appComponents #introTextContainer #loginbuttoncontainer div #login:hover {
   border-color: var(--body-border);
 }
-#app #introdiv #introTextContainer #loginbuttoncontainer div #signup {
+#app #appComponents #introTextContainer #loginbuttoncontainer div #signup {
   background-color: var(--other-body-background);
   color: var(--body-background);
+}
+#app #appComponents #loginDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#app #appComponents #loginDiv #welcome {
+  width: 100%;
+  text-align: center;
+}
+#app #appComponents #loginDiv #welcome h2 {
+  font-size: 50px;
+  white-space: normal;
+}
+#app #appComponents #loginDiv #welcome p {
+  font-size: 18px;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin: 10px 10% 0 10%;
+  width: 80%;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #4A4947;
+  outline: 0;
+  font-size: 1rem;
+  font-weight: 100;
+  color: var(--body-font);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__field::-moz-placeholder {
+  color: transparent;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__field::placeholder {
+  color: transparent;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__field:-moz-placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #4A4947;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 300;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, var(--body-font), var(--body-font));
+     border-image: linear-gradient(to right, var(--body-font), var(--body-font));
+  border-image-slice: 1;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--body-font);
+  font-weight: 700;
+}
+#app #appComponents #loginDiv #infoentry #inputs .form__field:required, #app #appComponents #loginDiv #infoentry #inputs .form__field:invalid {
+  box-shadow: none;
+}
+#app #appComponents #loginDiv #infoentry #buttons #login button {
+  width: 80%;
+  height: 40px;
+  border: 0.5px solid var(--body-border);
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--body-background);
+  background-color: var(--other-body-background);
+  cursor: pointer;
+  margin: 10%;
+}
+#app #appComponents #loginDiv #infoentry #buttons #login button:hover {
+  background: transparent;
+  color: var(--other-body-background);
+  transition: all 0.2s ease-in-out;
 }/*# sourceMappingURL=App.css.map */

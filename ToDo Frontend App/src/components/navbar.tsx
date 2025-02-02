@@ -1,4 +1,4 @@
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import logo from '/src/assets/logo.png';
 import profile from '/src/assets/user.png';
 function NavBar() {

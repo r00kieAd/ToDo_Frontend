@@ -1,32 +1,41 @@
-import { useState } from 'react'
-import NavBar from './components/navbar'
-import illustration from '/src/assets/notes.png'
-import './App.css'
+import { useState } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import NavBar from './components/navbar';
+import Login from './components/login';
+import illustration from '/src/assets/notes.png';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loginVisible, setLoginVisible] = useState<boolean>(false);
+
+  const displayLogin = () => {
+    setLoginVisible(true);
+  }
 
   return (
     <>
       <div id="app">
-        <div id="navcontainer">
+        <div id="app-navcontainer">
           <NavBar />
         </div>
-        <div id="introdiv">
-          <div id="introTextContainer" className='nunito-font'>
-            <div id="heading">
-              <h1></h1>
-            </div>
-            <div id="intro">
-              <p>“Stay organized and focused effortlessly. Manage tasks with ease, one step at a time.”</p>
-            </div>
-            <div id="loginbuttoncontainer">
-              <div>
-                <button className='nunito-font' id="login">Login</button>
-                <button className='nunito-font' id="signup">Register</button>
+        <div id="appComponents">
+          {loginVisible && <Login />}
+          {!loginVisible && <>
+            <div id="introTextContainer" className='nunito-font'>
+              <div id="heading">
+                <h1></h1>
+              </div>
+              <div id="intro">
+                <p>“Stay organized and focused effortlessly. Manage tasks with ease, one step at a time.”</p>
+              </div>
+              <div id="loginbuttoncontainer">
+                <div>
+                  <button className='nunito-font' id="login" onClick={displayLogin}>Login</button>
+                  <button className='nunito-font' id="signup">Register</button>
+                </div>
               </div>
             </div>
-          </div>
+          </>}
           <div id="introIllustration">
             <img src={illustration} alt="" />
           </div>
