@@ -152,9 +152,11 @@ body {
     #appComponents {
         @include centerSelf();
         width: 80%;
+        height: auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding: 2rem;
 
         #introTextContainer {
             @include centerSelfFlex();
@@ -214,107 +216,124 @@ body {
             }
         }
 
-        #loginDiv {
-            @include centerSelfFlex();
-
-            #welcome {
-                width: 100%;
-                text-align: center;
-
-                h2 {
-                    font-size: 50px;
-                    white-space: normal;
-                }
-
-                p {
-                    font-size: 18px;
-                }
+        #userInfoComponents {
+            right: 30%;
+            position: relative;
+            margin-top: 5%;
+            transition: $transition;
+            #signupDiv {
+                margin: -2%;
             }
 
-            #infoentry {
-                #inputs {
-                    .form__group {
-                        position: relative;
-                        padding: 15px 0 0;
-                        margin: 10px 10% 0 10%;
-                        width: 80%;
+            .user-info {
+                position: relative;
+                width: 30rem;
+                @include centerSelfFlex();
+
+                .wlcm {
+                    width: 100%;
+                    text-align: center;
+
+                    h2 {
+                        font-size: 50px;
+                        white-space: normal;
                     }
 
-                    .form__field {
-                        font-family: inherit;
-                        width: 100%;
-                        border: 0;
-                        border-bottom: 2px solid $loginInputAccent;
-                        outline: 0;
-                        font-size: 1rem;
-                        font-weight: 100;
-                        color: $fontColor;
-                        padding: 7px 0;
-                        background: transparent;
-                        transition: border-color 0.2s;
+                    p {
+                        font-size: 18px;
+                    }
+                }
 
-                        &::placeholder {
-                            color: transparent;
+                .infoentry {
+                    .inputs {
+                        .form__group {
+                            position: relative;
+                            padding: 15px 0 0;
+                            margin: 10px 10% 0 10%;
+                            width: 80%;
                         }
 
-                        &:placeholder-shown~.form__label {
-                            font-size: 1.3rem;
-                            cursor: text;
-                            top: 20px;
+                        .form__field {
+                            font-family: inherit;
+                            width: 100%;
+                            border: 0;
+                            border-bottom: 2px solid $loginInputAccent;
+                            outline: 0;
+                            font-size: 1rem;
+                            font-weight: 100;
+                            color: $fontColor;
+                            padding: 7px 0;
+                            background: transparent;
+                            transition: border-color 0.2s;
+
+                            &::placeholder {
+                                color: transparent;
+                            }
+
+                            &:placeholder-shown~.form__label {
+                                font-size: 1.3rem;
+                                cursor: text;
+                                top: 20px;
+                            }
                         }
-                    }
 
-                    .form__label {
-                        position: absolute;
-                        top: 0;
-                        display: block;
-                        transition: 0.2s;
-                        font-size: 1rem;
-                        color: $loginInputAccent;
-                    }
-
-                    .form__field:focus {
-                        ~.form__label {
+                        .form__label {
                             position: absolute;
                             top: 0;
                             display: block;
                             transition: 0.2s;
                             font-size: 1rem;
-                            color: $loginInputPrimaryColor;
-                            font-weight: 700;
+                            color: $loginInputAccent;
                         }
 
-                        padding-bottom: 6px;
-                        font-weight: 300;
-                        border-width: 3px;
-                        border-image: linear-gradient(to right, $loginInputPrimaryColor, $loginInputSecondaryColor);
-                        border-image-slice: 1;
+                        .form__field:focus {
+                            ~.form__label {
+                                position: absolute;
+                                top: 0;
+                                display: block;
+                                transition: 0.2s;
+                                font-size: 1rem;
+                                color: $loginInputPrimaryColor;
+                                font-weight: 700;
+                            }
+
+                            padding-bottom: 6px;
+                            font-weight: 300;
+                            border-width: 3px;
+                            border-image: linear-gradient(to right, $loginInputPrimaryColor, $loginInputSecondaryColor);
+                            border-image-slice: 1;
+                        }
+
+                        .form__field {
+
+                            &:required,
+                            &:invalid {
+                                box-shadow: none;
+                            }
+                        }
                     }
 
-                    .form__field {
+                    .submit-info-div {
+                        .submit-info {
+                            button {
+                                @include introButtons(80%, $introButtonHeight, $mainBg, $borderColor, $otherBg);
+                                margin: 10%;
+                            }
 
-                        &:required,
-                        &:invalid {
-                            box-shadow: none;
-                        }
-                    }
-                }
-
-                #buttons {
-                    #login {
-                        button {
-                            @include introButtons(80%, $introButtonHeight, $mainBg, $borderColor, $otherBg);
-                            margin: 10%;
-                        }
-
-                        button:hover {
-                            background: transparent;
-                            color: $otherBg;
-                            transition: $transition;
+                            button:hover {
+                                background: transparent;
+                                color: $otherBg;
+                                transition: $transition;
+                            }
                         }
                     }
                 }
             }
+        }
+
+        #introIllustration {
+            margin-top: 4%;
+            // width: 30rem;
         }
     }
 }

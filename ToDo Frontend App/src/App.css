@@ -95,9 +95,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
+  height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 2rem;
 }
 #app #appComponents #introTextContainer {
   display: flex;
@@ -154,29 +156,40 @@ body {
   background-color: var(--other-body-background);
   color: var(--body-background);
 }
-#app #appComponents #loginDiv {
+#app #appComponents #userInfoComponents {
+  right: 30%;
+  position: relative;
+  margin-top: 5%;
+  transition: all 0.2s ease-in-out;
+}
+#app #appComponents #userInfoComponents #signupDiv {
+  margin: -2%;
+}
+#app #appComponents #userInfoComponents .user-info {
+  position: relative;
+  width: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#app #appComponents #loginDiv #welcome {
+#app #appComponents #userInfoComponents .user-info .wlcm {
   width: 100%;
   text-align: center;
 }
-#app #appComponents #loginDiv #welcome h2 {
+#app #appComponents #userInfoComponents .user-info .wlcm h2 {
   font-size: 50px;
   white-space: normal;
 }
-#app #appComponents #loginDiv #welcome p {
+#app #appComponents #userInfoComponents .user-info .wlcm p {
   font-size: 18px;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__group {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__group {
   position: relative;
   padding: 15px 0 0;
   margin: 10px 10% 0 10%;
   width: 80%;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__field {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field {
   font-family: inherit;
   width: 100%;
   border: 0;
@@ -189,23 +202,23 @@ body {
   background: transparent;
   transition: border-color 0.2s;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__field::-moz-placeholder {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field::-moz-placeholder {
   color: transparent;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__field::placeholder {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field::placeholder {
   color: transparent;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__field:-moz-placeholder-shown ~ .form__label {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field:-moz-placeholder-shown ~ .form__label {
   font-size: 1.3rem;
   cursor: text;
   top: 20px;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__field:placeholder-shown ~ .form__label {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field:placeholder-shown ~ .form__label {
   font-size: 1.3rem;
   cursor: text;
   top: 20px;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__label {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__label {
   position: absolute;
   top: 0;
   display: block;
@@ -213,7 +226,7 @@ body {
   font-size: 1rem;
   color: #4A4947;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__field:focus {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field:focus {
   padding-bottom: 6px;
   font-weight: 300;
   border-width: 3px;
@@ -221,7 +234,7 @@ body {
      border-image: linear-gradient(to right, var(--body-font), var(--body-font));
   border-image-slice: 1;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__field:focus ~ .form__label {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field:focus ~ .form__label {
   position: absolute;
   top: 0;
   display: block;
@@ -230,10 +243,10 @@ body {
   color: var(--body-font);
   font-weight: 700;
 }
-#app #appComponents #loginDiv #infoentry #inputs .form__field:required, #app #appComponents #loginDiv #infoentry #inputs .form__field:invalid {
+#app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field:required, #app #appComponents #userInfoComponents .user-info .infoentry .inputs .form__field:invalid {
   box-shadow: none;
 }
-#app #appComponents #loginDiv #infoentry #buttons #login button {
+#app #appComponents #userInfoComponents .user-info .infoentry .submit-info-div .submit-info button {
   width: 80%;
   height: 40px;
   border: 0.5px solid var(--body-border);
@@ -244,8 +257,11 @@ body {
   cursor: pointer;
   margin: 10%;
 }
-#app #appComponents #loginDiv #infoentry #buttons #login button:hover {
+#app #appComponents #userInfoComponents .user-info .infoentry .submit-info-div .submit-info button:hover {
   background: transparent;
   color: var(--other-body-background);
   transition: all 0.2s ease-in-out;
+}
+#app #appComponents #introIllustration {
+  margin-top: 4%;
 }/*# sourceMappingURL=App.css.map */
