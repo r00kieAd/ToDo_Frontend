@@ -151,16 +151,14 @@ body {
 #app {
     #appComponents {
         @include centerSelf();
-        width: 80%;
+        width: 70%;
         height: auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding: 2rem;
-
         #introTextContainer {
             @include centerSelfFlex();
-
             #heading {
                 width: 100%;
 
@@ -180,7 +178,6 @@ body {
             }
 
             #intro {
-                width: 70%;
                 font-size: 18px;
             }
 
@@ -217,18 +214,13 @@ body {
         }
 
         #userInfoComponents {
-            right: 30%;
-            position: relative;
-            margin-top: 5%;
+            @include centerSelfFlex();
+            visibility: hidden;
+            opacity: 0;
             transition: $transition;
-            #signupDiv {
-                margin: -2%;
-            }
-
             .user-info {
                 position: relative;
                 width: 30rem;
-                @include centerSelfFlex();
 
                 .wlcm {
                     width: 100%;
@@ -333,7 +325,7 @@ body {
 
         #introIllustration {
             margin-top: 4%;
-            // width: 30rem;
+            width: 30rem;
         }
     }
 }

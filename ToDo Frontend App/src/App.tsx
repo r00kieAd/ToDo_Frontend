@@ -10,17 +10,24 @@ function App() {
   const [loginVisible, setLoginVisible] = useState<boolean>(false);
   const [signupVisible, setsignupVisible] = useState<boolean>(false);
   const userInfoComponents = useRef<HTMLDivElement>(null);
+  
+  const makeUserInfoComponentVisible = () => {
+    if (userInfoComponents.current) {
+      userInfoComponents.current.style.visibility = 'visible';
+      userInfoComponents.current.style.opacity = '1';
+    }
+  }
 
   const displayLogin = () => {
     setLoginVisible(true);
     setsignupVisible(false);
-    if (userInfoComponents.current) userInfoComponents.current.style.right = '0';
+    makeUserInfoComponentVisible();
   }
 
   const displaySignup = () => {
     setLoginVisible(false);
     setsignupVisible(true);
-    if (userInfoComponents.current) userInfoComponents.current.style.right = '0';
+    makeUserInfoComponentVisible();
   }
 
   return (
